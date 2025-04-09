@@ -1,17 +1,49 @@
-<!------------ "Hackwave" a National Level 24 Hours Hackathon -------------!>
+# ⚡ Smart Grid Optimization: Integrating Renewable Energy for Sustainable Power Systems
 
-Problem Statement: 
- "Smart Grid Optimization: Integrating Renewable Energy for Sustainable Power Systems"
+This project focuses on building a predictive and analytical pipeline for a smart grid system powered by renewable energy sources. By forecasting energy generation and modeling consumption across nodes, we aim to improve power distribution and grid stability in a sustainable manner.
 
-Goals:
-  1. To build predictive models capable of accurately forecasting power generation.
-  2. Additionally, they'll assess grid stability. Thus, we have to divide the Power generated in Generation node in the ratio mentioned between the three nodes.
+---
 
-Problem Statement: 
-  1) Considering the past 5 years of data provided, predict total power generated (p) for the first 3 months of 2024 at an hourly granularity. (Independent variables for first 3 
-  months of 2024 for consideration is shared in a separate file.) 
-  2) For above problem you need to merge all 20 files data as an final input file. Which will be consisting of Date time, Air, Pressure, wind speed and Power generated variables.
-  3) Considering this total power generated (p), prepare a database such that the generated power is distributed to 3 different consumption nodes with Node 1 will be taking 20% of total power,Node 2 will be 
-  taking 45% of total power and Node 3 will be taking 35% of total power generated respectively.
-  4) Use this existing and the newly prepared dataset to determine the Stability (“stability”, Dependent Variable) of the power Grid.
-  5) For above problem you need to consider Grid folder data consisting of price per unit, unit consumption, and grid stability report on hourly basis. Also, you need to add Power generated and stored at each Node(predicted during 3rd step.
+## 🎯 Goals
+
+1. Accurately **forecast power generation** using historical data.
+2. **Distribute predicted power** intelligently across consumption nodes.
+3. **Assess and predict grid stability** based on real-time and generated metrics.
+
+---
+
+## 📌 Problem Statement
+
+The project involves the following core tasks:
+
+### 1. Power Prediction
+- Use past **5 years of historical data** (20 files) to forecast **hourly power generation** for the **first 3 months of 2024**.
+- Features: `DateTime`, `Air Temperature`, `Pressure`, `Wind Speed`.
+
+### 2. Data Preparation
+- Merge all 20 CSV data files into a **single input dataset** for model training.
+- Final dataset columns: `DateTime`, `Air`, `Pressure`, `Wind Speed`, `Power Generated`.
+
+### 3. Power Distribution
+- Distribute the **predicted power (p)** for each hour among 3 nodes:
+  - 🔵 Node 1 → 20%  
+  - 🟢 Node 2 → 45%  
+  - 🔴 Node 3 → 35%
+
+### 4. Grid Stability Prediction
+- Use the **Grid folder dataset** containing:
+  - `Price per Unit`
+  - `Unit Consumption`
+  - `Grid Stability` (target variable)
+- Combine with new features: `Predicted Power`, `Node-wise Power Distribution`.
+
+---
+
+## 🧠 Machine Learning Tasks
+
+- **Regression Model** for predicting Power Generation (`p`)
+- **Classification/Regression Model** for Grid Stability using:
+  - Historical + Predicted data
+  - Real-time grid consumption metrics
+
+---
